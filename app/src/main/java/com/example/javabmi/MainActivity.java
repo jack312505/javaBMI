@@ -35,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         Float weight = Float.valueOf(binding.edWeight.getText().toString());
         Float height = Float.valueOf(binding.edHeight.getText().toString());
         Float bmi = weight / (height * height);
-        Toast.makeText(this, bmi.toString(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, bmi.toString(), Toast.LENGTH_LONG).show();
+        AlertDialog.Builder bmidialog = new AlertDialog.Builder(MainActivity.this);
+        bmidialog.setTitle("Your BMI");
+        bmidialog.setMessage(bmi.toString());
+        bmidialog.setPositiveButton("OK", null);
+        bmidialog.show();
     }
 }
